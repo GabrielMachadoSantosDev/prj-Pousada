@@ -1,0 +1,187 @@
+header {
+    position: relative;
+}
+
+.orc-container {
+    --verde: #1b8a5a;
+    --verde-claro: #d8f3dc;
+    --preto: #000000;
+
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px 10px 15px;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.orc-container * {
+    box-sizing: border-box;
+}
+
+
+.orc-card {
+    flex: 1;
+    background: #ffffff;
+    color: #111111;
+    border: 3px solid var(--preto);
+    border-radius: 0;
+    box-shadow: 8px 8px 0 var(--preto);
+    padding: 25px;
+}
+
+
+.orc-card h2 {
+    display: inline-block;
+    background: var(--verde);
+    color: #ffffff;
+    border: 3px solid var(--preto);
+    padding: 8px 16px;
+    margin: 0 0 25px 0;
+    font-size: 20px;
+}
+
+.orc-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.orc-campo label {
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+
+.orc-campo input[type="text"],
+.orc-campo input[type="email"],
+.orc-campo input[type="date"],
+.orc-campo input[type="number"],
+.orc-campo select {
+    background: #ffffff;
+    color: #111111;
+    padding: 10px;
+    border: 3px solid var(--preto);
+    border-radius: 0;
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+}
+
+
+.orc-campo input:hover,
+.orc-campo select:hover,
+.orc-campo input:focus,
+.orc-campo select:focus {
+    box-shadow: 4px 4px 0 var(--verde);
+    transform: translate(-2px, -2px);
+}
+
+
+.orc-linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.orc-opcao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 3px solid var(--preto);
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.orc-opcao:hover {
+    background: var(--verde-claro);
+}
+
+.orc-opcao:has(input:checked) {
+    background: var(--verde-claro);
+    box-shadow: 4px 4px 0 var(--verde);
+}
+
+.orc-opcao input {
+    accent-color: var(--verde);
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.orc-opcao label {
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+#btnEnviar {
+    width: 100%;
+    padding: 14px;
+    background: var(--verde);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px solid var(--preto);
+    border-radius: 0;
+    box-shadow: 6px 6px 0 var(--preto);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#btnEnviar:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--preto);
+}
+
+#btnEnviar:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 var(--preto);
+}
+
+#erro {
+    color: #c1121f;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+}
+
+
+.orc-card p {
+    margin: 0;
+    padding: 9px 0;
+}
+
+.orc-card p:not(#erro):not(:empty) {
+    border-bottom: 2px solid var(--preto);
+}
+
+.orc-total {
+    margin-top: 22px;
+    background: var(--verde);
+    color: #ffffff;
+    border: 3px solid var(--preto);
+    box-shadow: 5px 5px 0 var(--preto);
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.orc-total:empty {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .orc-container {
+        flex-direction: column;
+        gap: 35px;
+        padding: 0 20px 10px 15px;
+    }
+}

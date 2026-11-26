@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahama Royale</title>
+    <link href="https://fonts.cdnfonts.com/css/catchy-mager" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/coco-gothic" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formulario.css">
+
+</head>
+<body>
+
+    <header>
+        <nav id="menu">
+            <a href="#inicio" class="logo">Bahama Royale</a>
+            <button class="menu-mobile" id="botao-menu">☰</button>
+    
+            <ul id="lista-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="acomodacoes.html">Nossas Acomodações</a></li>
+                <li><a href="atracoes.html">Principais Atrações</a></li>
+                <li><a href="formulario.html">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section class="orc-container">
+
+    <div class="orc-card">
+        <h2>Faça sua reserva</h2>
+
+        <div class="orc-campo">
+            <label for="txNome">Nome:</label>
+            <input type="text" id="txNome" placeholder="Seu nome">
+        </div>
+
+        <div class="orc-campo">
+            <label for="txEmail">E-mail:</label>
+            <input type="email" id="txEmail" placeholder="Seu e-mail">
+        </div>
+
+        <div class="orc-campo">
+            <label for="txData">Data de hospedagem:</label>
+            <input type="date" id="txData">
+        </div>
+
+        <div class="orc-campo">
+            <label>Gênero:</label>
+            <div class="orc-linha">
+                <div class="orc-opcao">
+                    <input type="radio" id="masculino" name="genero" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                </div>
+
+                <div class="orc-opcao">
+                    <input type="radio" id="feminino" name="genero" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                </div>
+
+                <div class="orc-opcao">
+                    <input type="radio" id="outro" name="genero" value="Outro">
+                    <label for="outro">Outro</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="orc-campo">
+            <label for="selSuite">Suíte:</label>
+            <select id="selSuite">
+                <option value="0">Escolha uma suíte</option>
+                <option value="500">Suíte Ocean View - US$ 500 / diária</option>
+                <option value="800">Suíte Elegance - US$ 800 / diária</option>
+                <option value="1500">Suíte Sunset Premium - US$ 1.500 / diária</option>
+            </select>
+        </div>
+
+        <div class="orc-campo">
+            <label for="txDiarias">Número de diárias:</label>
+            <input type="number" id="txDiarias" min="1" value="1">
+        </div>
+
+        <div class="orc-campo">
+            <label>Adicionais (por diária):</label>
+            <div class="orc-linha">
+                <div class="orc-opcao">
+                    <input type="checkbox" id="cafe" name="adicional" value="30">
+                    <label for="cafe">Café da manhã (US$ 30)</label>
+                </div>
+
+                <div class="orc-opcao">
+                    <input type="checkbox" id="almoco" name="adicional" value="60">
+                    <label for="almoco">Almoço (US$ 60)</label>
+                </div>
+
+                <div class="orc-opcao">
+                    <input type="checkbox" id="jantar" name="adicional" value="80">
+                    <label for="jantar">Jantar (US$ 80)</label>
+                </div>
+            </div>
+        </div>
+
+        <p id="erro"></p>
+
+        <button id="btnEnviar" onclick="gerarOrcamento()">Enviar</button>
+    </div>
+
+    <div class="orc-card">
+        <h2>Seu orçamento</h2>
+
+        <p id="pNome">Preencha o formulário para ver o orçamento.</p>
+        <p id="pEmail"></p>
+        <p id="pData"></p>
+        <p id="pGenero"></p>
+        <p id="pSuite"></p>
+        <p id="pDiarias"></p>
+        <p id="pAdicionais"></p>
+        <p id="pValorSuite"></p>
+        <p id="pValorAdicionais"></p>
+
+        <div class="orc-total" id="pTotal"></div>
+    </div>
+
+</section>
+
+<footer id="contato">
+
+    <div class="footer-principal">
+
+        <div class="footer-marca">
+            <h2>Bahama <span>Royale</span></h2>
+
+            <p>
+                Seu refúgio particular no coração das Bahamas.
+                Conforto, tranquilidade e experiências inesquecíveis.
+            </p>
+
+            <a href="formulario.html" class="botao-reserva">
+                Faça sua reserva
+            </a>
+        </div>
+
+        <div class="footer-coluna">
+            <h3>Explore</h3>
+
+            <a href="index.html">Início</a>
+            <a href="acomodacoes.html">Acomodações</a>
+            <a href="atracoes.html">Atrações</a>
+            <a href="formulario.html">Fale Conosco</a>
+        </div>
+
+        <div class="footer-coluna">
+            <h3>Contato</h3>
+
+            <p>📍 Nassau, Bahamas</p>
+            <p>📞 +1 (242) 555-XXXX</p>
+            <p>✉️ contato@bahamaroyale.com</p>
+            <p>🕐 Todos os dias, 08:00 às 22:00</p>
+        </div>
+
+        <div class="footer-coluna">
+            <h3>Siga-nos</h3>
+
+            <p>
+                Acompanhe nossas novidades
+                e descubra o paraíso.
+            </p>
+
+            <div class="redes-sociais">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-final">
+
+        <p>
+            &copy; 2026 Bahama Royale. Todos os direitos reservados.
+        </p>
+
+        <p>
+            Nassau, Bahamas
+        </p>
+
+    </div>
+
+</footer>
+    <script src="js/formulario.js"></script>
+</body>
+
+</html>
